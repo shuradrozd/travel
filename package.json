@@ -1,0 +1,23 @@
+{
+  "name": "travel",
+  "version": "0.0.0",
+  "description": "Website for travel company",
+  "main": "travel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuradrozd/travel.git"
+  },
+  "author": "Alex Drozd",
+  "license": "GPL, MIT",
+  "bugs": {
+    "url": "https://github.com/shuradrozd/travel/issues"
+  },
+  "homepage": "https://github.com/shuradrozd/travel",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express3-handlebars": "^0.5.2"
+  }
+}
