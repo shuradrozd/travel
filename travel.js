@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var fortune = require('./lib/fortune.js');
+var url = require('url');
+
 var handlebars = require('express3-handlebars')
     .create({defaultLayout: 'main'});
 
@@ -15,8 +17,11 @@ app.get('/', function(req, res){
 });
 
 //route to about page
-app.get('/about', function(req, res){
-    res.render('about', {fortune: fortune.getFortune()});
+app.get('/about', function(req, res) {
+    res.render('about', {
+        fortune: fortune.getFortune(),
+        pageTestScript: '/qa/tests-about.js'
+    } );
 });
 
 //page 404
@@ -33,6 +38,13 @@ app.use(function(err, req, res, next){
     res.render('500');
 
 });
+
+app.use(function(req,res, next){
+   res.locals.showTests = app.get('env') !== 'production'
+   && req.query.test == '1';
+   next();
+});
+
 
 
 app.listen(app.get('port'), function(){
