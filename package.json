@@ -4,7 +4,9 @@
   "description": "Website for travel company",
   "main": "travel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./ -c ./.eslintrc",
+    "start": "nodemon ./travel.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,15 @@
   "homepage": "https://github.com/shuradrozd/travel",
   "dependencies": {
     "express": "^4.16.2",
-    "express3-handlebars": "^0.5.2"
+    "express-handlebars": "^3.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "eslint": "^4.17.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.6.1",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.14.12"
   }
 }
